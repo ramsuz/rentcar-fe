@@ -1,0 +1,12 @@
+.project
+.settings/
+.DS_Store
+/rentcar-web/.settings
+/rentcar-web/target
+/rentcar-web/.DS_Store
+/rentcar-web/.project
+/rentcar-web/.classpath
+/rentcar-config/.settings
+/rentcar-config/.DS_Store
+/rentcar-config/.project
+/rentcar-config/target
