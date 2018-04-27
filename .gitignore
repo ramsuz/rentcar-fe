@@ -6,6 +6,9 @@
 /rentcar-web/.DS_Store
 /rentcar-web/.project
 /rentcar-web/.classpath
+/rentcar-web/node/
+/rentcar-web/node_modules/
+/rentcar-web/package-lock.json
 /rentcar-config/.settings
 /rentcar-config/.DS_Store
 /rentcar-config/.project
