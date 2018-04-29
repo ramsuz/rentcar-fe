@@ -13,3 +13,5 @@
 /rentcar-config/.DS_Store
 /rentcar-config/.project
 /rentcar-config/target
+/rentcar-api/node_modules/
+/rentcar-api/package-lock.json
