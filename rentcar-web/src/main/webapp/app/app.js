@@ -16,6 +16,12 @@ export class App {
 		.then(msg => this.message = msg.hello);
 	}
 
+	getBrands() {
+		this.httpClient.fetch('http://localhost:8333/api/brands')
+		.then(response => response.json())
+		.then(msg => this.message = msg.value);
+	}
+
 ///*	simulateFetch(fetchResult){
 //		return new Promise(resolve => {
 //			setTimeout(() => {

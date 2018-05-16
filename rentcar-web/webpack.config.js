@@ -2,8 +2,9 @@ const path = require('path')
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const CopyWebpackPlugin = require('copy-webpack-plugin');
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
+//const StringReplacePlugin = require('string-replace-webpack-plugin');
 const { AureliaPlugin } = require('aurelia-webpack-plugin');
-const { optimize: { CommonsChunkPlugin }, ProvidePlugin } = require('webpack')
+const { optimize: { CommonsChunkPlugin }, ProvidePlugin, DefinePlugin } = require('webpack')
 
 // config helpers:
 const ensureArray = (config) => config && (Array.isArray(config) ? config : [config]) || []
@@ -91,6 +92,9 @@ module.exports = ({production, server, extractCss, coverage} = {}) => ({
       '$': 'jquery',
       'jQuery': 'jquery',
       'window.jQuery': 'jquery',
+    }),
+    new DefinePlugin({
+        __DEBUG__: true,
     }),
     new HtmlWebpackPlugin({
       template: 'src/main/webapp/index.ejs',
