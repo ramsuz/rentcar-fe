@@ -7,4 +7,13 @@ STEPS
 
 
 -Dresume=false release:prepare release:perform -Darguments="-Dmaven.javadoc.skip=true -DskipTests"
+
+
 -Dresume=false -DdryRun=true release:prepare release:perform -Darguments="-Dmaven.javadoc.skip=true -DskipTests"
+
+
+
+
+
+
+https://axelfontaine.com/blog/final-nail.html
