@@ -13,8 +13,8 @@
     "node": ">= 6.0.0"
   },
   "scripts": {
-    "start": "nps",
-    "test": "nps test"
+	  "start": "webpack-dev-server --config webpack.config.js  --progress --inline --hot --profile --port=9060",
+	  "build": "webpack -p --config webpack.config.js"
   },
   "jest": {
     "modulePaths": [
