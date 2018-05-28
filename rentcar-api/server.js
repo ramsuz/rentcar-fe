@@ -4,6 +4,8 @@ var bodyParser = require("body-parser");
 
 var Promise = require("bluebird");
 
+var fs = require('fs');
+
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
 

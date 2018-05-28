@@ -2,9 +2,13 @@ import 'babel-polyfill';
 import { PLATFORM } from "aurelia-pal";
 
 import environment from './environment';
+import '../static/styles.css';
+import 'font-awesome/css/font-awesome.css';
+import 'bootstrap/dist/css/bootstrap.css';
 
 export async function configure(aurelia) {
 	aurelia.use.standardConfiguration();
+	aurelia.use.feature(PLATFORM.moduleName('resources/index'));
 	if (__DEBUG__) {
 		aurelia.use.developmentLogging();
 		console.info('__DEBUG__ : ' + __DEBUG__);

@@ -1,7 +1,13 @@
 <template>
-  <h2>${heading}</h2>
-  
-  <h1>${message}</h1>
+	<require from="./nav-bar"></require>
+	<nav-bar router.bind="router"></nav-bar>
+	<!--button class="btn btn-danger" click.delegate="getBrands()"> Show Brands </button-->
+	
+	<!-- Left -->
+	
+	<!-- Right -->
 
-	<button class="btn btn-danger" click.delegate="getBrands()"> Show Brands </button>
+  <div class="page-host">
+    <router-view></router-view>
+  </div>
 </template>

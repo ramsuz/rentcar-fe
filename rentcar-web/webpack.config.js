@@ -2,7 +2,7 @@ const path = require('path')
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const CopyWebpackPlugin = require('copy-webpack-plugin');
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
-//const StringReplacePlugin = require('string-replace-webpack-plugin');
+// const StringReplacePlugin = require('string-replace-webpack-plugin');
 const { AureliaPlugin } = require('aurelia-webpack-plugin');
 const { optimize: { CommonsChunkPlugin }, ProvidePlugin, DefinePlugin } = require('webpack')
 
@@ -42,8 +42,12 @@ module.exports = ({production, server, extractCss, coverage} = {}) => ({
     sourceMapFilename: production ? '[name].[chunkhash].bundle.map' : '[name].[hash].bundle.map',
     chunkFilename: production ? '[name].[chunkhash].chunk.js' : '[name].[hash].chunk.js',
   },
+  devtool: 'inline-source-map',
   devServer: {
     contentBase: outDir,
+    proxy: {
+    	"/rctn/api": "http://localhost:9000"
+    },
     // serve index.html for all 404 (required for push-state)
     historyApiFallback: true,
   },
@@ -94,7 +98,7 @@ module.exports = ({production, server, extractCss, coverage} = {}) => ({
       'window.jQuery': 'jquery',
     }),
     new DefinePlugin({
-        __DEBUG__: true,
+        __DEBUG__: true
     }),
     new HtmlWebpackPlugin({
       template: 'src/main/webapp/index.ejs',
@@ -107,6 +111,10 @@ module.exports = ({production, server, extractCss, coverage} = {}) => ({
         title, server, baseUrl
       },
     }),
+    /*
+	 * new CopyWebpackPlugin([{ from: 'src/main/webapp/static/favicon.ico', to:
+	 * 'favicon.ico' }]),
+	 */
     /*
 	 * new CopyWebpackPlugin([ { from:
 	 * 'node_modules/babel-polyfill/dist/polyfill.min.js', to: 'polyfill.min.js' }, {
